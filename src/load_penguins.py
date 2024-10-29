@@ -15,7 +15,8 @@ def main():
     # Parse arguments
     args = parser.parse_args()
 
-    penguins = pd.read_csv(Path('..') / 'data' / 'dataset.csv')
+    script_dir = Path(__file__).parent.resolve()
+    penguins = pd.read_csv(script_dir / '..' / 'data' / 'dataset.csv')
 
     # Write to disk
     output_path = Path(args.output_dir) / f'{args.name}.csv'
