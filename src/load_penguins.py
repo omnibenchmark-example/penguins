@@ -25,7 +25,6 @@ def main():
     features = features.dropna()
     features['sex'] = pd.factorize(features['sex'])[0]
 
-
     scaler = StandardScaler()
     numeric_features = features.drop(columns=['sex'])
     numeric_features_scaled = scaler.fit_transform(numeric_features)
